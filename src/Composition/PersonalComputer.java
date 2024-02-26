@@ -3,7 +3,7 @@ package Composition;
 public class PersonalComputer extends Product{
 
     //Composition is a HAS A relationship
-    //alternative to inheritance
+    //Contrast to inheritance, combination of classes
     private ComputerCase computerCase;
     private Monitor monitor;
     private MotherBoard motherBoard;
@@ -15,15 +15,23 @@ public class PersonalComputer extends Product{
         this.motherBoard = motherBoard;
     }
 
-    public ComputerCase getComputerCase() {
-        return computerCase;
+//    public ComputerCase getComputerCase() {
+//        return computerCase;
+//    }
+//
+//    public Monitor getMonitor() {
+//        return monitor;
+//    }
+//
+//    public MotherBoard getMotherBoard() {
+//        return motherBoard;
+//    }
+    private void drawLogo(){
+        monitor.drawPixelAt(1200, 50, "GREEN");
     }
 
-    public Monitor getMonitor() {
-        return monitor;
-    }
-
-    public MotherBoard getMotherBoard() {
-        return motherBoard;
+    public void powerUp(){
+        computerCase.pressPowerButton();
+        drawLogo();
     }
 }
