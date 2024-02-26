@@ -2,10 +2,10 @@ package Composition.CompositionChallenge;
 
 public class Main {
     public static void main(String[] args) {
-        DishWasher dishWasher = new DishWasher();
-        Refrigerator refrigerator = new Refrigerator();
-        CoffeeMaker coffeeMaker = new CoffeeMaker();
-        SmartKitchen smartKitchen = new SmartKitchen(coffeeMaker, refrigerator,dishWasher);
+//        DishWasher dishWasher = new DishWasher();
+//        Refrigerator refrigerator = new Refrigerator();
+//        CoffeeMaker coffeeMaker = new CoffeeMaker();
+        SmartKitchen smartKitchen = new SmartKitchen();
 
         smartKitchen.pourMilk();
         smartKitchen.addWater();

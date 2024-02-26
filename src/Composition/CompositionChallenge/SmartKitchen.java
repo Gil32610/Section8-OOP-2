@@ -5,10 +5,10 @@ public class SmartKitchen {
     private Refrigerator refrigerator;
     private DishWasher dishWasher;
 
-    public SmartKitchen(CoffeeMaker coffeeMaker, Refrigerator refrigerator, DishWasher dishWasher) {
-        this.coffeeMaker = coffeeMaker;
-        this.refrigerator = refrigerator;
-        this.dishWasher = dishWasher;
+    public SmartKitchen() {
+        this.coffeeMaker = new CoffeeMaker();
+        this.refrigerator = new Refrigerator();
+        this.dishWasher = new DishWasher();
     }
 
     public void addWater(){
