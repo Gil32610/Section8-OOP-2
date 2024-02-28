@@ -25,5 +25,20 @@ public class NextMain {
 
         var aquaTeen = new Comedy("Aqua Teen");
         aquaTeen.watchComedy();
+        aquaTeen.watchMovie();
+
+        Object unknownObject = Movie.getMovie("A", "Indiana Jones");
+        if(unknownObject.getClass().getSimpleName()=="Equals"){
+            Comedy c = (Comedy) unknownObject;
+            c.watchComedy();
+        } else if (unknownObject instanceof Adventure) {
+            //instance of tests the type of Object or instance
+            ((Adventure) unknownObject).watchAdventure();
+        } else if (unknownObject instanceof  ScienceFiction syfy) {
+            //Pattern matching support
+            syfy.watchScienceFiction();
+        }
+
+
     }
 }
