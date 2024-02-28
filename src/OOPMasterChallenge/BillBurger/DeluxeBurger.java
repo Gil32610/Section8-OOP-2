@@ -1,10 +1,17 @@
 package OOPMasterChallenge.BillBurger;
 
-public class DeluxeBurger extends Burger{
-    private Topping topping4;
-    private Topping topping5;
+import java.util.ArrayList;
 
-    public DeluxeBurger(String type, double price) {
-        super(type, 80.0);
+public class DeluxeBurger extends Burger{
+
+    public DeluxeBurger( double price) {
+        super(80.0);
     }
+
+    @Override
+    protected void setToppingsList() {
+        toppings = new ArrayList<>(5);
+    }
+
+
 }
