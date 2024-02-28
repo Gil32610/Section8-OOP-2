@@ -1,32 +1,53 @@
 package OOPMasterChallenge.BillBurger;
 
 public class Drink {
-    private String type;
     private Size size;
-    private double price;
+    protected double price;
 
     public Drink() {
-        this("Coke", Size.SMALL);
+        this(Size.SMALL);
     }
 
-    public Drink(String type, Size size) {
-        this.type = type;
+    public Drink(Size size) {
         this.size = size;
-        this.price = 0.0;
+        changeDrinkPrice(size);
     }
 
     protected void changeDrinkPrice(Size size) {
         switch (size) {
-            case SMALL -> price = 3.0;
-            case MEDIUM -> price = 5.0;
-            case LARGE -> price = 8.0;
-            default -> price = 0;
+            case SMALL -> price = 1.5;
+            case MEDIUM -> price = 3.0;
+            case LARGE -> price = 5.5;
         }
     }
 }
 
 class Coke extends Drink {
-    public Coke(String type, Size size) {
-        super(type, size);
+
+    public Coke(Size size) {
+        super(size);
+    }
+    @Override
+    protected void changeDrinkPrice(Size size) {
+        switch (size){
+            case SMALL -> price = 3.00;
+            case MEDIUM -> price = 5.00;
+            case LARGE -> price = 8.0;
+        }
+    }
+}
+
+class OranjeJuice extends Drink{
+    public OranjeJuice(Size size) {
+        super(size);
+    }
+
+    @Override
+    protected void changeDrinkPrice(Size size) {
+        switch (size){
+            case SMALL -> price = 2.50;
+            case MEDIUM -> price = 4.00;
+            case LARGE -> price = 7.0;
+        }
     }
 }
