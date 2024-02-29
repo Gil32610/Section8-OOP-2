@@ -13,12 +13,27 @@ public class Drink {
         changeDrinkPrice(size);
     }
 
+    public double getPrice() {
+        return price;
+    }
+
+    public Size getSize() {
+        return size;
+    }
+
     protected void changeDrinkPrice(Size size) {
         switch (size) {
             case SMALL -> price = 1.5;
             case MEDIUM -> price = 3.0;
             case LARGE -> price = 5.5;
         }
+
+
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s %s: $%2.f",size,getClass().getSimpleName());
     }
 }
 
