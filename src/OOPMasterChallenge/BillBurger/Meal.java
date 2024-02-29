@@ -49,7 +49,18 @@ public class Meal {
     }
 
     public void selectBurger() {
+        System.out.println("""
+                Select Burger:
+                M = (Regular Meal) R = (Regular Burger) C = (Cheeseburger) D = (Double cheeseburger) B = (Bacon cheeseburger)
+                A = (Deluxe Astro Burger) S = (Deluxe Super Burger)""");
+        char option;
+        do{
+            option = 'a';
 
+        }while(option!='Q');
+        switch(option){
+
+        }
     }
 
     public void selectDrink() {
@@ -76,10 +87,13 @@ public class Meal {
     }
 
     public void orderSummary() {
-
+        System.out.println(burger);
+        System.out.println(drink);
+        System.out.println(sideItem);
+        System.out.printf("Total price for the Meal: $%2.f%n",calculateTotalAmount());
     }
 
-    private double calculateTotal() {
+    private double calculateTotalAmount() {
         double totalAmount;
         if (this.burger instanceof DeluxeBurger deluxeBurger) {
             totalAmount = deluxeBurger.getPrice();
