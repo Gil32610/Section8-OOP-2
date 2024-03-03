@@ -10,6 +10,11 @@ public class SideItem {
     public double getPrice() {
         return price;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s: $%.2f",getClass().getSimpleName(), price);
+    }
 }
 
 class Fries extends SideItem{

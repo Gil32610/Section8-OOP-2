@@ -8,9 +8,19 @@ public class Burger {
 
     private double price;
 
+    private int maxToppings;
     protected ArrayList<Topping> toppings;
     public Burger() {
         this(5.0);
+        setMaxToppings(3);
+    }
+
+    public int getMaxToppings() {
+        return maxToppings;
+    }
+
+    protected void setMaxToppings(int maxToppings){
+        this.maxToppings = maxToppings;
     }
 
     protected Burger(double price) {
@@ -35,7 +45,7 @@ public class Burger {
     }
 
     protected void addToppingToBurger(Topping topping){
-        if(this.toppings.size()<3){
+        if(this.toppings.size()<maxToppings){
             toppings.add(topping);
         }else{
             System.out.println("Max Toppings reached!");
@@ -44,6 +54,10 @@ public class Burger {
 
     @Override
     public String toString() {
-        return String.format("%s: $%2.f %n") + toppings;
+        return String.format("%s: $%.2f %n", getClass().getSimpleName(), price) + toppings;
+    }
+
+    public int getToppingsSize(){
+        return this.toppings.size();
     }
 }
